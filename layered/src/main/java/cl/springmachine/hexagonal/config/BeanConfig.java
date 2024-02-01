@@ -1,4 +1,4 @@
-package cl.springmachine.layered.commons.config;
+package cl.springmachine.hexagonal.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

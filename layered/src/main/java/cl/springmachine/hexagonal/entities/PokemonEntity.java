@@ -1,4 +1,4 @@
-package cl.springmachine.layered.entities;
+package cl.springmachine.hexagonal.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -16,9 +16,10 @@ public class PokemonEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(unique = true)
     private String name;
 
-    @Column(name = "pokedex_number")
+    @Column(name = "pokedex_number", unique = true)
     private Integer pokedexNumber;
 
 }

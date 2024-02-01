@@ -1,8 +1,8 @@
-package cl.springmachine.layered.commons.services.impl;
+package cl.springmachine.hexagonal.services.impl;
 
-import cl.springmachine.layered.commons.dtos.PokeApiPokemonDto;
-import cl.springmachine.layered.commons.dtos.PokemonDto;
-import cl.springmachine.layered.commons.services.PokeApiService;
+import cl.springmachine.hexagonal.dtos.PokeApiPokemonDto;
+import cl.springmachine.hexagonal.dtos.PokemonDto;
+import cl.springmachine.hexagonal.services.PokeApiService;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -16,9 +16,9 @@ public class PokeApiServiceImpl implements PokeApiService {
     }
 
     @Override
-    public PokemonDto getPokemonInfo(String pokemonName) {
-        
-        String url = "https://pokeapi.co/api/v2/pokemon/" + pokemonName;
+    public PokemonDto getPokemonInfo(String name) {
+
+        String url = "https://pokeapi.co/api/v2/pokemon/" + name;
         PokeApiPokemonDto pokeApiPokemonDto = restTemplate.getForObject(url, PokeApiPokemonDto.class);
         assert pokeApiPokemonDto != null;
         return PokemonDto.builder()

@@ -1,4 +1,4 @@
-package cl.springmachine.layered.commons.dtos;
+package cl.springmachine.hexagonal.dtos;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
@@ -10,6 +10,7 @@ public class PokemonDto {
 
     private Integer id;
 
+    @JsonProperty("name")
     private String name;
 
     @JsonProperty("pokedex_number")
