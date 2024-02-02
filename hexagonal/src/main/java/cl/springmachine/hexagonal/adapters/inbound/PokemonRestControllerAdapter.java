@@ -1,11 +1,11 @@
-package cl.springmachine.hexagonal.adapters.inbound;
+package cl.springmachine.onion.adapters.inbound;
 
-import cl.springmachine.hexagonal.core.domain.pokemon.Pokemon;
-import cl.springmachine.hexagonal.core.usecases.CreatePokemonUseCase;
-import cl.springmachine.hexagonal.core.usecases.DeletePokemonUseCase;
-import cl.springmachine.hexagonal.core.usecases.ReadPokemonUseCase;
-import cl.springmachine.hexagonal.ports.inbound.PokemonDto;
-import cl.springmachine.hexagonal.ports.inbound.PokemonRestControllerPort;
+import cl.springmachine.onion.core.domain.pokemon.Pokemon;
+import cl.springmachine.onion.core.usecases.CreatePokemonUseCase;
+import cl.springmachine.onion.core.usecases.DeletePokemonUseCase;
+import cl.springmachine.onion.core.usecases.ReadPokemonUseCase;
+import cl.springmachine.onion.ports.inbound.PokemonDto;
+import cl.springmachine.onion.ports.inbound.PokemonRestControllerPort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

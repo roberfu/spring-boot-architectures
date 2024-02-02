@@ -1,4 +1,4 @@
-package cl.springmachine.hexagonal.adapters.outbound;
+package cl.springmachine.onion.adapters.outbound;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

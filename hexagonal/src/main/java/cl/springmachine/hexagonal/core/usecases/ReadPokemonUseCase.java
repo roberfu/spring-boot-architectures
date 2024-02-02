@@ -1,6 +1,6 @@
-package cl.springmachine.hexagonal.core.usecases;
+package cl.springmachine.onion.core.usecases;
 
-import cl.springmachine.hexagonal.core.domain.pokemon.Pokemon;
+import cl.springmachine.onion.core.domain.pokemon.Pokemon;
 
 public interface ReadPokemonUseCase {
 

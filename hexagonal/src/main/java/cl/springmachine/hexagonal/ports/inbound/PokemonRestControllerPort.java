@@ -1,4 +1,4 @@
-package cl.springmachine.hexagonal.ports.inbound;
+package cl.springmachine.onion.ports.inbound;
 
 import org.springframework.http.ResponseEntity;
 

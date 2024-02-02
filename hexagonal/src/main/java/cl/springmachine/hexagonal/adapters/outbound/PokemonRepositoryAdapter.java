@@ -1,7 +1,7 @@
-package cl.springmachine.hexagonal.adapters.outbound;
+package cl.springmachine.onion.adapters.outbound;
 
-import cl.springmachine.hexagonal.core.domain.pokemon.Pokemon;
-import cl.springmachine.hexagonal.ports.outbound.PokemonRepositoryPort;
+import cl.springmachine.onion.core.domain.pokemon.Pokemon;
+import cl.springmachine.onion.ports.outbound.PokemonRepositoryPort;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;

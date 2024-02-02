@@ -1,18 +1,15 @@
-package cl.springmachine.onion.core.domain.pokemon;
+package cl.springmachine.hexagonal.adapters.outbound;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class Pokemon {
+@NoArgsConstructor
+public class PokeApiPokemonDto {
 
     private Integer id;
 
     private String name;
-
-    private Integer pokedexNumber;
-
 }

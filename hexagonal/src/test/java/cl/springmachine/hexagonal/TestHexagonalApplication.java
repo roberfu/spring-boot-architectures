@@ -1,4 +1,4 @@
-package cl.springmachine.hexagonal;
+package cl.springmachine.onion;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.test.context.TestConfiguration;

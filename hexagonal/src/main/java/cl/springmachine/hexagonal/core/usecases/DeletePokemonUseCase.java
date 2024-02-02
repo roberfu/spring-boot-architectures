@@ -1,4 +1,4 @@
-package cl.springmachine.hexagonal.core.usecases;
+package cl.springmachine.onion.core.usecases;
 
 public interface DeletePokemonUseCase {
 

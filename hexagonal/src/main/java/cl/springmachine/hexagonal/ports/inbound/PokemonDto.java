@@ -1,4 +1,4 @@
-package cl.springmachine.hexagonal.ports.inbound;
+package cl.springmachine.onion.ports.inbound;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;

@@ -1,7 +1,7 @@
-package cl.springmachine.hexagonal.core.service;
+package cl.springmachine.onion.core.service;
 
-import cl.springmachine.hexagonal.core.usecases.DeletePokemonUseCase;
-import cl.springmachine.hexagonal.ports.outbound.PokemonRepositoryPort;
+import cl.springmachine.onion.core.usecases.DeletePokemonUseCase;
+import cl.springmachine.onion.ports.outbound.PokemonRepositoryPort;
 import org.springframework.stereotype.Service;
 
 @Service
