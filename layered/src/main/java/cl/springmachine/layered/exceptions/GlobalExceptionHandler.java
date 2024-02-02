@@ -1,4 +1,4 @@
-package cl.springmachine.hexagonal.exceptions;
+package cl.springmachine.onion.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ProblemDetail;

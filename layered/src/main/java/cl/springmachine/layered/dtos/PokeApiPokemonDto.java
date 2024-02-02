@@ -1,4 +1,4 @@
-package cl.springmachine.hexagonal.dtos;
+package cl.springmachine.onion.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

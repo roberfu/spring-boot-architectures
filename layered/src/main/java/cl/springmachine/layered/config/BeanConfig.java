@@ -1,4 +1,4 @@
-package cl.springmachine.hexagonal.config;
+package cl.springmachine.onion.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

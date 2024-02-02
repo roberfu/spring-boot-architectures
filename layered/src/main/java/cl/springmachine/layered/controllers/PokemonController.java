@@ -1,7 +1,7 @@
-package cl.springmachine.hexagonal.controllers;
+package cl.springmachine.onion.controllers;
 
-import cl.springmachine.hexagonal.dtos.PokemonDto;
-import cl.springmachine.hexagonal.services.PokemonService;
+import cl.springmachine.onion.dtos.PokemonDto;
+import cl.springmachine.onion.services.PokemonService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

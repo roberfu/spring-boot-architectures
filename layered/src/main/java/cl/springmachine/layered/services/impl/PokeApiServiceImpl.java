@@ -1,8 +1,8 @@
-package cl.springmachine.hexagonal.services.impl;
+package cl.springmachine.onion.services.impl;
 
-import cl.springmachine.hexagonal.dtos.PokeApiPokemonDto;
-import cl.springmachine.hexagonal.dtos.PokemonDto;
-import cl.springmachine.hexagonal.services.PokeApiService;
+import cl.springmachine.onion.dtos.PokeApiPokemonDto;
+import cl.springmachine.onion.dtos.PokemonDto;
+import cl.springmachine.onion.services.PokeApiService;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 

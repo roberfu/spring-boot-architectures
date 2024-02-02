@@ -1,6 +1,6 @@
-package cl.springmachine.hexagonal.services;
+package cl.springmachine.onion.services;
 
-import cl.springmachine.hexagonal.dtos.PokemonDto;
+import cl.springmachine.onion.dtos.PokemonDto;
 
 public interface PokemonService {
 

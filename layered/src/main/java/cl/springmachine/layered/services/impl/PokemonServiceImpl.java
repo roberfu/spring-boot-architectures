@@ -1,10 +1,10 @@
-package cl.springmachine.hexagonal.services.impl;
+package cl.springmachine.onion.services.impl;
 
-import cl.springmachine.hexagonal.dtos.PokemonDto;
-import cl.springmachine.hexagonal.entities.PokemonEntity;
-import cl.springmachine.hexagonal.repositories.PokemonRepository;
-import cl.springmachine.hexagonal.services.PokeApiService;
-import cl.springmachine.hexagonal.services.PokemonService;
+import cl.springmachine.onion.dtos.PokemonDto;
+import cl.springmachine.onion.entities.PokemonEntity;
+import cl.springmachine.onion.repositories.PokemonRepository;
+import cl.springmachine.onion.services.PokeApiService;
+import cl.springmachine.onion.services.PokemonService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

@@ -1,6 +1,6 @@
-package cl.springmachine.hexagonal.repositories;
+package cl.springmachine.onion.repositories;
 
-import cl.springmachine.hexagonal.entities.PokemonEntity;
+import cl.springmachine.onion.entities.PokemonEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface PokemonRepository extends JpaRepository<PokemonEntity, Integer> {

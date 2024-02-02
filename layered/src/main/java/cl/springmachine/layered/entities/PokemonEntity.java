@@ -1,4 +1,4 @@
-package cl.springmachine.hexagonal.entities;
+package cl.springmachine.onion.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
