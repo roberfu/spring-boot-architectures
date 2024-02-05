@@ -1,12 +1,12 @@
-package cl.springmachine.onion.services;
+package cl.springmachine.layered.services;
 
-import cl.springmachine.onion.dtos.PokemonDto;
+import cl.springmachine.layered.dtos.PokemonDto;
 
 public interface PokemonService {
 
-    Integer createPokemon(PokemonDto request);
+	Integer createPokemon(PokemonDto request);
 
-    PokemonDto readPokemon(Integer id);
+	PokemonDto readPokemon(Integer id);
 
-    void deletePokemon(Integer id);
+	void deletePokemon(Integer id);
 }

@@ -1,8 +1,8 @@
-package cl.springmachine.onion.services;
+package cl.springmachine.layered.services;
 
-import cl.springmachine.onion.dtos.PokemonDto;
+import cl.springmachine.layered.dtos.PokemonDto;
 
 public interface PokeApiService {
 
-    PokemonDto getPokemonInfo(String name);
+	PokemonDto getPokemonInfo(String name);
 }
