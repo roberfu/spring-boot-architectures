@@ -1,13 +1,13 @@
-package cl.springmachine.onion.ports.outbound;
+package cl.springmachine.hexagonal.ports.outbound;
 
-import cl.springmachine.onion.core.domain.pokemon.Pokemon;
+import cl.springmachine.hexagonal.core.domain.pokemon.Pokemon;
 
 public interface PokemonRepositoryPort {
 
-    Integer savePokemon(Pokemon pokemon);
+	Integer savePokemon(Pokemon pokemon);
 
-    Pokemon getPokemon(Integer id);
+	Pokemon getPokemon(Integer id);
 
-    void deletePokemon(Integer id);
+	void deletePokemon(Integer id);
 
 }

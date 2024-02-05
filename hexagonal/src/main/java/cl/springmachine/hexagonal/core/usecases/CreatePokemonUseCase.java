@@ -1,8 +1,8 @@
-package cl.springmachine.onion.core.usecases;
+package cl.springmachine.hexagonal.core.usecases;
 
-import cl.springmachine.onion.core.domain.pokemon.Pokemon;
+import cl.springmachine.hexagonal.core.domain.pokemon.Pokemon;
 
 public interface CreatePokemonUseCase {
 
-    Integer createPokemon(Pokemon pokemon);
+	Integer createPokemon(Pokemon pokemon);
 }

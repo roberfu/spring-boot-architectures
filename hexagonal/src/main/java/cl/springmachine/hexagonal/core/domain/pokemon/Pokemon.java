@@ -1,4 +1,4 @@
-package cl.springmachine.onion.core.domain.pokemon;
+package cl.springmachine.hexagonal.core.domain.pokemon;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,10 +9,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Pokemon {
 
-    private Integer id;
+	private Integer id;
 
-    private String name;
+	private String name;
 
-    private Integer pokedexNumber;
+	private Integer pokedexNumber;
 
 }

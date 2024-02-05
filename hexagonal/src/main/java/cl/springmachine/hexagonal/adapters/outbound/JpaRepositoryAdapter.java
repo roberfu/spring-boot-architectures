@@ -1,4 +1,4 @@
-package cl.springmachine.onion.adapters.outbound;
+package cl.springmachine.hexagonal.adapters.outbound;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
