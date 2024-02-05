@@ -21,6 +21,7 @@
         <module>clean</module>
         <module>layered</module>
         <module>onion</module>
+        <module>modulith</module>
     </modules>
 
     <properties>
