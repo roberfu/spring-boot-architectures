@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -55,7 +56,8 @@ public class PokemonRestControllerAdapter implements PokemonRestControllerPort {
 	}
 
 	@Override
-	public ResponseEntity<Void> deletePokemon(Integer id) {
+	@DeleteMapping("/{id}")
+	public ResponseEntity<Void> deletePokemon(@PathVariable Integer id) {
 		deletePokemonUseCase.deletePokemon(id);
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
