@@ -1,4 +1,4 @@
-package cl.springmachine.layered.exceptions;
+package cl.springmachine.layered.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ProblemDetail;

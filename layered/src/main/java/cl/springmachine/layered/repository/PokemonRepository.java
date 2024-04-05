@@ -1,8 +1,7 @@
-package cl.springmachine.layered.repositories;
+package cl.springmachine.layered.repository;
 
+import cl.springmachine.layered.entity.PokemonEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
-
-import cl.springmachine.layered.entities.PokemonEntity;
 
 public interface PokemonRepository extends JpaRepository<PokemonEntity, Integer> {
 }
