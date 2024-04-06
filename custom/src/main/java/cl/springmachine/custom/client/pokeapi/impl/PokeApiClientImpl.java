@@ -16,11 +16,16 @@ public class PokeApiClientImpl implements PokeApiClient {
     }
 
     @Override
-    public PokemonDTO getInfo(String name) {
+    public PokemonDTO getPokemonInfo(String name) {
 
         String url = "https://pokeapi.co/api/v2/pokemon/" + name;
-        PokemonPokeApiDTO response = restTemplate.getForObject(url, PokemonPokeApiDTO.class);
-        assert response != null;
-        return PokemonDTO.builder().name(response.getName()).pokedexNumber(response.getId()).build();
+        PokemonPokeApiDTO pokeApiPokemonDto = restTemplate.getForObject(url, PokemonPokeApiDTO.class);
+        assert pokeApiPokemonDto != null;
+        return PokemonDTO.builder()
+                .name(pokeApiPokemonDto.getName())
+                .pokedexNumber(pokeApiPokemonDto.getId())
+                .type(pokeApiPokemonDto.getTypes()
+                        .stream().findFirst().map(pokemonType -> pokemonType.getType().getName()).orElseThrow())
+                .build();
     }
 }

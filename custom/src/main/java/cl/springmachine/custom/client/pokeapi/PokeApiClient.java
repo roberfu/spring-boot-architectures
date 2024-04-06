@@ -4,5 +4,5 @@ import cl.springmachine.custom.service.pokemon.dto.PokemonDTO;
 
 public interface PokeApiClient {
 
-    PokemonDTO getInfo(String name);
+    PokemonDTO getPokemonInfo(String name);
 }

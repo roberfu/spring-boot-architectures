@@ -4,9 +4,8 @@ import cl.springmachine.custom.service.pokemon.dto.PokemonDTO;
 
 public interface PokemonService {
 
-    Integer save(PokemonDTO request);
+    Integer savePokemon(String name);
 
-    PokemonDTO get(Integer id);
+    PokemonDTO getPokemon(Integer pokedexNumber);
 
-    void delete(Integer id);
 }

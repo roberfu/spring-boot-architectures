@@ -22,22 +22,23 @@ public class PokemonServiceImpl implements PokemonService {
     }
 
     @Override
-    public Integer save(PokemonDTO request) {
-        PokemonDTO pokemonDto = pokeApiClient.getInfo(request.getName());
-        return pokemonRepository.save(new PokemonEntity(null, pokemonDto.getName(), pokemonDto.getPokedexNumber()))
-                .getId();
+    public Integer savePokemon(String name) {
+        PokemonDTO pokemonDto = pokeApiClient.getPokemonInfo(name);
+        return pokemonRepository.save(PokemonEntity.builder()
+                .type(pokemonDto.getType())
+                .name(pokemonDto.getName())
+                .pokedexNumber(pokemonDto.getPokedexNumber())
+                .build()).getPokedexNumber();
     }
 
     @Override
-    public PokemonDTO get(Integer id) {
-        Optional<PokemonEntity> optional = pokemonRepository.findById(id);
-        return optional.map(pokemonEntity -> PokemonDTO.builder().id(pokemonEntity.getId())
-                        .name(pokemonEntity.getName()).pokedexNumber(pokemonEntity.getPokedexNumber()).build())
-                .orElse(null);
+    public PokemonDTO getPokemon(Integer pokedexNumber) {
+        Optional<PokemonEntity> optional = pokemonRepository.findById(pokedexNumber);
+        return optional.map(pokemonEntity -> PokemonDTO.builder()
+                .pokedexNumber(pokemonEntity.getPokedexNumber())
+                .name(pokemonEntity.getName())
+                .type(pokemonEntity.getType())
+                .build()).orElse(null);
     }
 
-    @Override
-    public void delete(Integer id) {
-        pokemonRepository.deleteById(id);
-    }
 }
