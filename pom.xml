@@ -21,7 +21,6 @@
         <module>clean</module>
         <module>layered</module>
         <module>onion</module>
-        <module>modulith</module>
         <module>custom</module>
     </modules>
 
