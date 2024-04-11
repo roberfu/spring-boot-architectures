@@ -19,22 +19,17 @@ public class PokemonController {
         this.pokemonService = pokemonService;
     }
 
-    @PostMapping()
-    ResponseEntity<Map<String, Integer>> save(@RequestBody PokemonDTO request) {
-        Integer id = pokemonService.save(request);
+    @PostMapping("/{name}")
+    ResponseEntity<Map<String, Integer>> save(@PathVariable String name) {
+        Integer pokedexNumber = pokemonService.savePokemon(name);
         Map<String, Integer> response = new HashMap<>();
-        response.put("id", id);
+        response.put("pokeDexNumber", pokedexNumber);
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
-    @GetMapping("/{id}")
-    ResponseEntity<PokemonDTO> get(@PathVariable Integer id) {
-        return new ResponseEntity<>(pokemonService.get(id), HttpStatus.OK);
+    @GetMapping("/{pokedexNumber}")
+    ResponseEntity<PokemonDTO> get(@PathVariable Integer pokedexNumber) {
+        return new ResponseEntity<>(pokemonService.getPokemon(pokedexNumber), HttpStatus.OK);
     }
 
-    @DeleteMapping("/{id}")
-    ResponseEntity<Void> deletePokemon(@PathVariable Integer id) {
-        pokemonService.delete(id);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-    }
 }

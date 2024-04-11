@@ -1,7 +1,6 @@
 package cl.springmachine.hexagonal.ports.inbound;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,10 +12,10 @@ import lombok.NoArgsConstructor;
 @Builder
 public class PokemonDto {
 
-	private Integer id;
+    private String name;
 
-	private String name;
+    @JsonProperty("pokedex_number")
+    private Integer pokedexNumber;
 
-	@JsonProperty("pokedex_number")
-	private Integer pokedexNumber;
+    private String type;
 }

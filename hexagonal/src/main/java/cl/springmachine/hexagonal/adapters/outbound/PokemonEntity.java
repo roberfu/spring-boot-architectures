@@ -1,30 +1,29 @@
 package cl.springmachine.hexagonal.adapters.outbound;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 @Entity
 @Table(name = "pokemon")
 public class PokemonEntity {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
-	@Column(unique = true)
-	private String name;
+    @Column(name = "pokedex_number", unique = true)
+    private Integer pokedexNumber;
 
-	@Column(unique = true, name = "pokedex_number")
-	private Integer pokedexNumber;
+    @Column(unique = true)
+    private String name;
+
+    private String type;
 
 }
