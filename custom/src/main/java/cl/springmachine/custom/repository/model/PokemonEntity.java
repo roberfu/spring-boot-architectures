@@ -1,9 +1,6 @@
 package cl.springmachine.custom.repository.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,12 +15,15 @@ import lombok.NoArgsConstructor;
 public class PokemonEntity {
 
     @Id
-    @Column(name = "pokedex_number")
-    private Integer pokedexNumber;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
     @Column(unique = true)
     private String name;
 
     private String type;
+
+    @Column(name = "pokedex_number", unique = true)
+    private Integer pokedexNumber;
 
 }

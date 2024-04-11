@@ -33,7 +33,7 @@ public class PokemonServiceImpl implements PokemonService {
 
     @Override
     public PokemonDTO getPokemon(Integer pokedexNumber) {
-        Optional<PokemonEntity> optional = pokemonRepository.findById(pokedexNumber);
+        Optional<PokemonEntity> optional = pokemonRepository.findByPokedexNumber(pokedexNumber);
         return optional.map(pokemonEntity -> PokemonDTO.builder()
                 .pokedexNumber(pokemonEntity.getPokedexNumber())
                 .name(pokemonEntity.getName())

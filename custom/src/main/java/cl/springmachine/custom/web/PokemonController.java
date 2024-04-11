@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api/pokemon")
+@RequestMapping("/pokemon")
 public class PokemonController {
 
     private final PokemonService pokemonService;
