@@ -29,6 +29,7 @@ public class PokemonController {
 
     @GetMapping("/{pokedexNumber}")
     ResponseEntity<PokemonDTO> get(@PathVariable Integer pokedexNumber) {
+        
         return new ResponseEntity<>(pokemonService.getPokemon(pokedexNumber), HttpStatus.OK);
     }
 
