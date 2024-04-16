@@ -1,1 +1,1 @@
-# demo-architectures-spring-boot
+# spting-boot-architectures-samples
