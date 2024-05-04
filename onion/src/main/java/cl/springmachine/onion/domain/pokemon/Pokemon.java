@@ -11,10 +11,10 @@ import lombok.NoArgsConstructor;
 @Builder
 public class Pokemon {
 
-	private Integer id;
-
 	private String name;
 
 	private Integer pokedexNumber;
+	
+	private String type;
 
 }

@@ -4,10 +4,10 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 import cl.springmachine.onion.domain.pokemon.Pokemon;
-import cl.springmachine.onion.domain.service.PokeApiProvider;
+import cl.springmachine.onion.domain.service.ExternalPokeApiProvider;
 
 @Component
-public class PokeApiRestClient implements PokeApiProvider {
+public class PokeApiRestClient implements ExternalPokeApiProvider {
 
 	private final RestTemplate restTemplate;
 
@@ -18,9 +18,12 @@ public class PokeApiRestClient implements PokeApiProvider {
 	@Override
 	public Pokemon getPokemon(String name) {
 		String url = "https://pokeapi.co/api/v2/pokemon/" + name;
-		PokeApiPokemonDto pokeApiDto = restTemplate.getForObject(url, PokeApiPokemonDto.class);
-		assert pokeApiDto != null;
-		return Pokemon.builder().id(null).name(pokeApiDto.getName()).pokedexNumber(pokeApiDto.getId()).build();
+		PokeApiPokemonDto pokeApiPokemonDto = restTemplate.getForObject(url, PokeApiPokemonDto.class);
+		assert pokeApiPokemonDto != null;
+		return Pokemon.builder().name(pokeApiPokemonDto.getName()).pokedexNumber(pokeApiPokemonDto.getId())
+				.type(pokeApiPokemonDto.getTypes().stream().findFirst()
+						.map(pokemonType -> pokemonType.getType().getName()).orElseThrow())
+				.build();
 	}
 
 }

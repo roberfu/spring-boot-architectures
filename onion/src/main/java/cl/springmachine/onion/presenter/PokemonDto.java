@@ -9,11 +9,11 @@ import lombok.Data;
 @Builder
 public class PokemonDto {
 
-	private Integer id;
-
 	private String name;
 
 	@JsonProperty("pokedex_number")
 	private Integer pokedexNumber;
+	
+	private String type;
 
 }

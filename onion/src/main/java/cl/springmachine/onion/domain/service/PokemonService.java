@@ -9,7 +9,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class PokemonService {
 
-	private final PokeApiProvider pokeApiProvider;
+	private final ExternalPokeApiProvider pokeApiProvider;
 
 	private final PokemonProvider pokemonProvider;
 
@@ -18,12 +18,8 @@ public class PokemonService {
 		return pokemonProvider.createPokemon(pokemon);
 	}
 
-	public Pokemon readPokemon(Integer id) {
-		return pokemonProvider.readPokemon(id);
-	}
-
-	public void deletePokemon(Integer id) {
-		pokemonProvider.deletePokemon(id);
+	public Pokemon readPokemon(Integer pokedexNumber) {
+		return pokemonProvider.readPokemon(pokedexNumber);
 	}
 
 }
