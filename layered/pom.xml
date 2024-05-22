@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>cl.springmachine</groupId>
-		<artifactId>spring-boot-architectures-samples</artifactId>
+		<artifactId>spring-boot-architectures</artifactId>
 		<version>1.0</version>
 	</parent>
 	<artifactId>layered</artifactId>
