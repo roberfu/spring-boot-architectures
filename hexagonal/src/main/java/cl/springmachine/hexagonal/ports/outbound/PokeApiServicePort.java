@@ -1,7 +1,7 @@
 package cl.springmachine.hexagonal.ports.outbound;
 
-import cl.springmachine.hexagonal.ports.inbound.PokemonDto;
+import cl.springmachine.hexagonal.adapters.outbound.PokeApiPokemonDto;
 
 public interface PokeApiServicePort {
-    PokemonDto getPokemonInfoPokeApi(String name);
+    PokeApiPokemonDto getPokemonInfoPokeApi(String name);
 }

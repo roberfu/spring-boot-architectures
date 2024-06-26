@@ -1,9 +1,9 @@
 package cl.springmachine.onion.domain.service;
 
-import cl.springmachine.onion.domain.pokemon.Pokemon;
+import cl.springmachine.onion.gateway.PokeApiPokemonDto;
 
 public interface ExternalPokeApiProvider {
 
-	Pokemon getPokemon(String name);
+	PokeApiPokemonDto getPokemon(String name);
 
 }

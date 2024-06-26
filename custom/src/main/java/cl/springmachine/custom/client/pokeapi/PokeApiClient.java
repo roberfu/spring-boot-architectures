@@ -1,8 +1,8 @@
 package cl.springmachine.custom.client.pokeapi;
 
-import cl.springmachine.custom.service.pokemon.dto.PokemonDTO;
+import cl.springmachine.custom.client.pokeapi.dto.PokemonPokeApiDTO;
 
 public interface PokeApiClient {
 
-    PokemonDTO getPokemonInfo(String name);
+    PokemonPokeApiDTO getPokemonInfo(String name);
 }

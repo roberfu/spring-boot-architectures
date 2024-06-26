@@ -1,14 +1,15 @@
 package cl.springmachine.custom.service.pokemon.impl;
 
+import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
 import cl.springmachine.custom.client.pokeapi.PokeApiClient;
+import cl.springmachine.custom.client.pokeapi.dto.PokemonPokeApiDTO;
 import cl.springmachine.custom.repository.PokemonRepository;
 import cl.springmachine.custom.repository.model.PokemonEntity;
 import cl.springmachine.custom.service.pokemon.PokemonService;
 import cl.springmachine.custom.service.pokemon.dto.PokemonDTO;
-import org.springframework.stereotype.Service;
-
-import java.util.Optional;
-
 
 @Service
 public class PokemonServiceImpl implements PokemonService {
@@ -22,10 +23,16 @@ public class PokemonServiceImpl implements PokemonService {
         this.pokemonRepository = pokemonRepository;
     }
 
-
     @Override
     public Integer savePokemon(String name) {
-        PokemonDTO pokemonDto = pokeApiClient.getPokemonInfo(name);
+        PokemonPokeApiDTO pokemonPokeApiDTO = pokeApiClient.getPokemonInfo(name);
+        PokemonDTO pokemonDto = PokemonDTO.builder()
+                .name(pokemonPokeApiDTO.getName())
+                .pokedexNumber(pokemonPokeApiDTO.getId())
+                .type(pokemonPokeApiDTO.getTypes()
+                        .stream().findFirst().map(pokemonType -> pokemonType.getType().getName()).orElseThrow())
+                .build();
+
         return pokemonRepository.save(PokemonEntity.builder()
                 .type(pokemonDto.getType())
                 .name(pokemonDto.getName())

@@ -1,11 +1,13 @@
 package cl.springmachine.hexagonal.core.service;
 
+import org.springframework.stereotype.Service;
+
+import cl.springmachine.hexagonal.adapters.outbound.PokeApiPokemonDto;
 import cl.springmachine.hexagonal.core.domain.pokemon.Pokemon;
 import cl.springmachine.hexagonal.core.usecases.CreatePokemonUseCase;
 import cl.springmachine.hexagonal.ports.inbound.PokemonDto;
 import cl.springmachine.hexagonal.ports.outbound.PokeApiServicePort;
 import cl.springmachine.hexagonal.ports.outbound.PokemonRepositoryPort;
-import org.springframework.stereotype.Service;
 
 @Service
 public class CreatePokemonUseCaseImpl implements CreatePokemonUseCase {
@@ -21,7 +23,15 @@ public class CreatePokemonUseCaseImpl implements CreatePokemonUseCase {
 
     @Override
     public Integer createPokemon(String name) {
-        PokemonDto pokemon = pokeApiServicePort.getPokemonInfoPokeApi(name);
+        PokeApiPokemonDto pokeApiPokemonDto = pokeApiServicePort.getPokemonInfoPokeApi(name);
+
+        PokemonDto pokemon = PokemonDto.builder()
+                .name(pokeApiPokemonDto.getName())
+                .pokedexNumber(pokeApiPokemonDto.getId())
+                .type(pokeApiPokemonDto.getTypes()
+                        .stream().findFirst().map(pokemonType -> pokemonType.getType().getName()).orElseThrow())
+                .build();
+
         return repositoryPort.savePokemon(Pokemon.builder()
                 .name(pokemon.getName())
                 .pokedexNumber(pokemon.getPokedexNumber())

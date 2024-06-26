@@ -1,14 +1,16 @@
 package cl.springmachine.layered.service.impl;
 
+import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import cl.springmachine.layered.dto.PokeApiPokemonDTO;
 import cl.springmachine.layered.dto.PokemonDTO;
 import cl.springmachine.layered.entity.PokemonEntity;
 import cl.springmachine.layered.repository.PokemonRepository;
 import cl.springmachine.layered.service.PokeApiExternalService;
 import cl.springmachine.layered.service.PokemonService;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
-import java.util.Optional;
 
 @Service
 public class PokemonServiceImpl implements PokemonService {
@@ -25,7 +27,14 @@ public class PokemonServiceImpl implements PokemonService {
     @Override
     @Transactional
     public Integer savePokemon(String name) {
-        PokemonDTO pokemonDTO = pokeApiService.getPokemonInfo(name);
+        PokeApiPokemonDTO pokeApiPokemonDTO = pokeApiService.getPokemonInfo(name);
+        PokemonDTO pokemonDTO = PokemonDTO.builder()
+                .name(pokeApiPokemonDTO.getName())
+                .pokedexNumber(pokeApiPokemonDTO.getId())
+                .type(pokeApiPokemonDTO.getTypes()
+                        .stream().findFirst().map(pokemonType -> pokemonType.getType().getName()).orElseThrow())
+                .build();
+
         return pokemonRepository.save(PokemonEntity.builder()
                 .type(pokemonDTO.getType())
                 .name(pokemonDTO.getName())

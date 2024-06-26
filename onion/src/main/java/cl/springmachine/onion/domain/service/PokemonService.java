@@ -3,6 +3,7 @@ package cl.springmachine.onion.domain.service;
 import org.springframework.stereotype.Component;
 
 import cl.springmachine.onion.domain.pokemon.Pokemon;
+import cl.springmachine.onion.gateway.PokeApiPokemonDto;
 import lombok.RequiredArgsConstructor;
 
 @Component
@@ -14,7 +15,11 @@ public class PokemonService {
 	private final PokemonProvider pokemonProvider;
 
 	public Integer createPokemon(String name) {
-		Pokemon pokemon = pokeApiProvider.getPokemon(name);
+		PokeApiPokemonDto pokeApiPokemonDto = pokeApiProvider.getPokemon(name);
+		Pokemon pokemon = Pokemon.builder().name(pokeApiPokemonDto.getName()).pokedexNumber(pokeApiPokemonDto.getId())
+				.type(pokeApiPokemonDto.getTypes().stream().findFirst()
+						.map(pokemonType -> pokemonType.getType().getName()).orElseThrow())
+				.build();
 		return pokemonProvider.createPokemon(pokemon);
 	}
 

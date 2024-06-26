@@ -1,8 +1,8 @@
 package cl.springmachine.layered.service;
 
-import cl.springmachine.layered.dto.PokemonDTO;
+import cl.springmachine.layered.dto.PokeApiPokemonDTO;
 
 public interface PokeApiExternalService {
 
-    PokemonDTO getPokemonInfo(String name);
+    PokeApiPokemonDTO getPokemonInfo(String name);
 }
