@@ -1,1 +1,0 @@
-# spting-boot-architectures-samples
