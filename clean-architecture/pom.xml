@@ -4,14 +4,16 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>cl.springmachine</groupId>
-		<artifactId>spring-boot-architectures</artifactId>
-		<version>1.0</version>
-	</parent>
-
-	<artifactId>clean</artifactId>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.4.3</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    
+	<groupId>cl.springmachine</groupId>
+	<artifactId>clean-architecture</artifactId>
 	<version>0.0.1</version>
-	<name>clean</name>
+	<name>clean-architecture</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
